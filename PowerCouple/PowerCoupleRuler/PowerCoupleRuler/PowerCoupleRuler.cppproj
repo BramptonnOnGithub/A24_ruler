@@ -126,6 +126,7 @@
       <Value>Z:\Shared\C3I A24 ruler\Ruler_MimiVersion\A24_ruler\PowerCouple\PowerCoupleRuler\PowerCoupleRuler\Libraries\Display</Value>
       <Value>Z:\Shared\C3I A24 ruler\Ruler_MimiVersion\A24_ruler\PowerCouple\PowerCoupleRuler\PowerCoupleRuler\Libraries\Encoder</Value>
       <Value>Z:\Shared\C3I A24 ruler\Ruler_MimiVersion\A24_ruler\PowerCouple\PowerCoupleRuler\PowerCoupleRuler\Libraries\SD</Value>
+      <Value>Z:\Shared\C3I A24 ruler\Ruler_MimiVersion\A24_ruler\PowerCouple\PowerCoupleRuler\PowerCoupleRuler\Libraries\UART</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.level>Optimize debugging experience (-Og)</avrgcc.compiler.optimization.level>
@@ -186,6 +187,9 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="SD_Card.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="UART.cpp">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>

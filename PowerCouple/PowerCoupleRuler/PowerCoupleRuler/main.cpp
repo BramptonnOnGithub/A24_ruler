@@ -10,17 +10,17 @@
 #include "include_generic.h"
 
 // Libraries de l'equipe
+#include "UART.h"
 #include "Buttons.h"
 #include "Display.h"
 #include "Encoder.h"
 #include "SD_Card.h"
 
-// Definition des bytes
-typedef uint8_t byte;
+
 
 void mainSetup(){
 	// initialisation de la communication
-	/*TODO : UART*/
+	UARTInit();
 	/*TODO : SPI*/
 	
 	// Initialisation des libraries
