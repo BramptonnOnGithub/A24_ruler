@@ -20,7 +20,7 @@
 
 void mainSetup(){
 	// initialisation de la communication
-	UARTInit();
+	UARTInit(); // baud rate initialisee a 19200 
 	/*TODO : SPI*/
 	
 	// Initialisation des libraries
@@ -31,8 +31,6 @@ void mainSetup(){
 	
 	// Activation des interrupt global (for button and encoder)
 	sei();
-	
-	
 }
 
 //Interrupt sur PORTB (encodeur)

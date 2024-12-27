@@ -7,6 +7,6 @@
 
 void UARTInit();
 
-void transmitByte(uint8_t data);
+void USART0_SendBytes(uint8_t data);
 
 uint8_t receiveByte(void);
