@@ -55,6 +55,8 @@ Discarded input sections
                 0x00000000       0x10 Display.o
  .text._Z16displayDecrementv
                 0x00000000       0x10 Display.o
+ .data.group_mask
+                0x00000000        0x5 Display.o
  .text          0x00000000        0x0 Encoder.o
  .data          0x00000000        0x0 Encoder.o
  .bss           0x00000000        0x0 Encoder.o
@@ -71,8 +73,6 @@ Discarded input sections
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
- .text._Z8mainLoopv
-                0x00000000        0x2 main.o
  .text          0x00000000        0x0 SD_Card.o
  .data          0x00000000        0x0 SD_Card.o
  .bss           0x00000000        0x0 SD_Card.o
@@ -313,7 +313,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x392
+.text           0x00000000      0x3b8
  *(.vectors)
  .vectors       0x00000000       0xb4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega328pb/avr5/crtatmega328pb.o
                 0x00000000                __vector_default
@@ -438,22 +438,28 @@ END GROUP
  .text._Z9mainSetupv
                 0x0000030c       0x18 main.o
                 0x0000030c                _Z9mainSetupv
- .text.main     0x00000324        0x6 main.o
-                0x00000324                main
+ .text._Z8mainLoopv
+                0x00000324       0x1a main.o
+                0x00000324                _Z8mainLoopv
+ .text.main     0x0000033e        0xa main.o
+                0x0000033e                main
  .text._Z10sdCardInitv
-                0x0000032a        0x2 SD_Card.o
-                0x0000032a                _Z10sdCardInitv
+                0x00000348        0x2 SD_Card.o
+                0x00000348                _Z10sdCardInitv
  .text._Z8UARTInitv
-                0x0000032c       0x36 UART.o
-                0x0000032c                _Z8UARTInitv
+                0x0000034a       0x30 UART.o
+                0x0000034a                _Z8UARTInitv
+ .text._Z12transmitByteh
+                0x0000037a        0xe UART.o
+                0x0000037a                _Z12transmitByteh
  .text._Z16USART0_SendBytesPhh
-                0x00000362       0x2c UART.o
-                0x00000362                _Z16USART0_SendBytesPhh
-                0x0000038e                . = ALIGN (0x2)
+                0x00000388       0x2c UART.o
+                0x00000388                _Z16USART0_SendBytesPhh
+                0x000003b4                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000038e        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x0000038e                _exit
-                0x0000038e                exit
+ .fini9         0x000003b4        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x000003b4                _exit
+                0x000003b4                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -472,11 +478,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000038e        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x000003b4        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000392                _etext = .
+                0x000003b8                _etext = .
 
-.data           0x00800100        0xc load address 0x00000392
+.data           0x00800100        0x8 load address 0x000003b8
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -486,44 +492,44 @@ END GROUP
                 0x00800101        0x1 Display.o
                 0x00800101                DP_position
  .data.transmitData
-                0x00800102        0x6 Display.o
+                0x00800102        0x2 Display.o
                 0x00800102                transmitData
  .data.initData
-                0x00800108        0x2 Display.o
-                0x00800108                initData
- .data.mode     0x0080010a        0x2 Encoder.o
-                0x0080010a                mode
+                0x00800104        0x2 Display.o
+                0x00800104                initData
+ .data.mode     0x00800106        0x2 Encoder.o
+                0x00800106                mode
  *(.gnu.linkonce.d*)
  *(.rodata)
  *(.rodata*)
  *(.gnu.linkonce.r*)
-                0x0080010c                . = ALIGN (0x2)
-                0x0080010c                _edata = .
-                0x0080010c                PROVIDE (__data_end, .)
+                0x00800108                . = ALIGN (0x2)
+                0x00800108                _edata = .
+                0x00800108                PROVIDE (__data_end, .)
 
-.bss            0x0080010c        0x6
-                0x0080010c                PROVIDE (__bss_start, .)
+.bss            0x00800108        0x6
+                0x00800108                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  .bss.direction
-                0x0080010c        0x2 Encoder.o
-                0x0080010c                direction
+                0x00800108        0x2 Encoder.o
+                0x00800108                direction
  .bss.lastState
-                0x0080010e        0x2 Encoder.o
-                0x0080010e                lastState
+                0x0080010a        0x2 Encoder.o
+                0x0080010a                lastState
  .bss.encoderPosition
-                0x00800110        0x2 Encoder.o
-                0x00800110                encoderPosition
+                0x0080010c        0x2 Encoder.o
+                0x0080010c                encoderPosition
  *(COMMON)
-                0x00800112                PROVIDE (__bss_end, .)
-                0x00000392                __data_load_start = LOADADDR (.data)
-                0x0000039e                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x0080010e                PROVIDE (__bss_end, .)
+                0x000003b8                __data_load_start = LOADADDR (.data)
+                0x000003c0                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800112        0x0
+.noinit         0x0080010e        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x00800112                _end = .
+                0x0080010e                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -593,7 +599,7 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x160
+.debug_aranges  0x00000000      0x168
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x58 Buttons.o
@@ -606,72 +612,73 @@ END GROUP
  .debug_aranges
                 0x00000110       0x20 SD_Card.o
  .debug_aranges
-                0x00000130       0x30 UART.o
+                0x00000130       0x38 UART.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x1050
+.debug_info     0x00000000     0x1154
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x8ea C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega328pb/avr5/crtatmega328pb.o
  .debug_info    0x000008ea      0x174 Buttons.o
- .debug_info    0x00000a5e      0x1e8 Display.o
- .debug_info    0x00000c46      0x17a Encoder.o
- .debug_info    0x00000dc0      0x143 main.o
- .debug_info    0x00000f03       0x43 SD_Card.o
- .debug_info    0x00000f46      0x10a UART.o
+ .debug_info    0x00000a5e      0x1fa Display.o
+ .debug_info    0x00000c58      0x17a Encoder.o
+ .debug_info    0x00000dd2      0x20a main.o
+ .debug_info    0x00000fdc       0x43 SD_Card.o
+ .debug_info    0x0000101f      0x135 UART.o
 
-.debug_abbrev   0x00000000      0xc40
+.debug_abbrev   0x00000000      0xcc1
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x86e C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega328pb/avr5/crtatmega328pb.o
  .debug_abbrev  0x0000086e       0x88 Buttons.o
  .debug_abbrev  0x000008f6       0xfd Display.o
  .debug_abbrev  0x000009f3       0xba Encoder.o
- .debug_abbrev  0x00000aad       0x9d main.o
- .debug_abbrev  0x00000b4a       0x2f SD_Card.o
- .debug_abbrev  0x00000b79       0xc7 UART.o
+ .debug_abbrev  0x00000aad      0x11e main.o
+ .debug_abbrev  0x00000bcb       0x2f SD_Card.o
+ .debug_abbrev  0x00000bfa       0xc7 UART.o
 
-.debug_line     0x00000000      0x824
+.debug_line     0x00000000      0x91b
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x1a6 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega328pb/avr5/crtatmega328pb.o
  .debug_line    0x000001a6      0x13b Buttons.o
  .debug_line    0x000002e1      0x13c Display.o
  .debug_line    0x0000041d      0x1e5 Encoder.o
- .debug_line    0x00000602       0xc3 main.o
- .debug_line    0x000006c5       0x3c SD_Card.o
- .debug_line    0x00000701      0x123 UART.o
+ .debug_line    0x00000602      0x1a4 main.o
+ .debug_line    0x000007a6       0x3c SD_Card.o
+ .debug_line    0x000007e2      0x139 UART.o
 
-.debug_frame    0x00000000      0x250
+.debug_frame    0x00000000      0x260
  *(.debug_frame)
  .debug_frame   0x00000000       0xa4 Buttons.o
  .debug_frame   0x000000a4       0x64 Display.o
  .debug_frame   0x00000108       0x9c Encoder.o
  .debug_frame   0x000001a4       0x44 main.o
  .debug_frame   0x000001e8       0x24 SD_Card.o
- .debug_frame   0x0000020c       0x44 UART.o
+ .debug_frame   0x0000020c       0x54 UART.o
 
-.debug_str      0x00000000      0x88c
+.debug_str      0x00000000      0x901
  *(.debug_str)
  .debug_str     0x00000000      0x318 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega328pb/avr5/crtatmega328pb.o
  .debug_str     0x00000318      0x29d Buttons.o
                                 0x2d1 (size before relaxing)
- .debug_str     0x000005b5      0x117 Display.o
+ .debug_str     0x000005b5      0x122 Display.o
+                                0x2d5 (size before relaxing)
+ .debug_str     0x000006d7      0x102 Encoder.o
                                 0x2ca (size before relaxing)
- .debug_str     0x000006cc      0x102 Encoder.o
-                                0x2ca (size before relaxing)
- .debug_str     0x000007ce       0x72 main.o
-                                0x272 (size before relaxing)
- .debug_str     0x00000840       0x11 SD_Card.o
+ .debug_str     0x000007d9       0xdc main.o
+                                0x2dc (size before relaxing)
+ .debug_str     0x000008b5       0x11 SD_Card.o
                                 0x170 (size before relaxing)
- .debug_str     0x00000851       0x3b UART.o
-                                0x232 (size before relaxing)
+ .debug_str     0x000008c6       0x3b UART.o
+                                0x251 (size before relaxing)
 
-.debug_loc      0x00000000      0x1a3
+.debug_loc      0x00000000      0x1eb
  *(.debug_loc)
  .debug_loc     0x00000000       0x99 Buttons.o
  .debug_loc     0x00000099       0x24 Display.o
  .debug_loc     0x000000bd       0xa4 Encoder.o
- .debug_loc     0x00000161       0x42 UART.o
+ .debug_loc     0x00000161       0x48 main.o
+ .debug_loc     0x000001a9       0x42 UART.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -691,14 +698,14 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x100
+.debug_ranges   0x00000000      0x108
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x48 Buttons.o
  .debug_ranges  0x00000048       0x30 Display.o
  .debug_ranges  0x00000078       0x38 Encoder.o
  .debug_ranges  0x000000b0       0x20 main.o
  .debug_ranges  0x000000d0       0x10 SD_Card.o
- .debug_ranges  0x000000e0       0x20 UART.o
+ .debug_ranges  0x000000e0       0x28 UART.o
 
 .debug_macro
  *(.debug_macro)
