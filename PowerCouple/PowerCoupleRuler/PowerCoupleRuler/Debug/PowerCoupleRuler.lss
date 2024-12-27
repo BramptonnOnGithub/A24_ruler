@@ -1,0 +1,654 @@
+
+PowerCoupleRuler.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         0000000c  00800100  00000392  00000426  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000392  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000006  0080010c  0080010c  00000432  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000432  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000464  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000160  00000000  00000000  000004a4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00001050  00000000  00000000  00000604  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000c40  00000000  00000000  00001654  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000824  00000000  00000000  00002294  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000250  00000000  00000000  00002ab8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000088c  00000000  00000000  00002d08  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    000001a3  00000000  00000000  00003594  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000100  00000000  00000000  00003737  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 5a 00 	jmp	0xb4	; 0xb4 <__ctors_end>
+   4:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+   8:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+   c:	0c 94 d3 00 	jmp	0x1a6	; 0x1a6 <__vector_3>
+  10:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  14:	0c 94 79 00 	jmp	0xf2	; 0xf2 <__vector_5>
+  18:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  1c:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  20:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  24:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  28:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  2c:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  30:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  34:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  38:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  3c:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  40:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  44:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  48:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  4c:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  50:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  54:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  58:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  5c:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  60:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  64:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  68:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  6c:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  70:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  74:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  78:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  7c:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  80:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  84:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  88:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  8c:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  90:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  94:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  98:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  9c:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  a0:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  a4:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  a8:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  ac:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+  b0:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
+
+000000b4 <__ctors_end>:
+  b4:	11 24       	eor	r1, r1
+  b6:	1f be       	out	0x3f, r1	; 63
+  b8:	cf ef       	ldi	r28, 0xFF	; 255
+  ba:	d8 e0       	ldi	r29, 0x08	; 8
+  bc:	de bf       	out	0x3e, r29	; 62
+  be:	cd bf       	out	0x3d, r28	; 61
+
+000000c0 <__do_copy_data>:
+  c0:	11 e0       	ldi	r17, 0x01	; 1
+  c2:	a0 e0       	ldi	r26, 0x00	; 0
+  c4:	b1 e0       	ldi	r27, 0x01	; 1
+  c6:	e2 e9       	ldi	r30, 0x92	; 146
+  c8:	f3 e0       	ldi	r31, 0x03	; 3
+  ca:	02 c0       	rjmp	.+4      	; 0xd0 <__do_copy_data+0x10>
+  cc:	05 90       	lpm	r0, Z+
+  ce:	0d 92       	st	X+, r0
+  d0:	ac 30       	cpi	r26, 0x0C	; 12
+  d2:	b1 07       	cpc	r27, r17
+  d4:	d9 f7       	brne	.-10     	; 0xcc <__do_copy_data+0xc>
+
+000000d6 <__do_clear_bss>:
+  d6:	21 e0       	ldi	r18, 0x01	; 1
+  d8:	ac e0       	ldi	r26, 0x0C	; 12
+  da:	b1 e0       	ldi	r27, 0x01	; 1
+  dc:	01 c0       	rjmp	.+2      	; 0xe0 <.do_clear_bss_start>
+
+000000de <.do_clear_bss_loop>:
+  de:	1d 92       	st	X+, r1
+
+000000e0 <.do_clear_bss_start>:
+  e0:	a2 31       	cpi	r26, 0x12	; 18
+  e2:	b2 07       	cpc	r27, r18
+  e4:	e1 f7       	brne	.-8      	; 0xde <.do_clear_bss_loop>
+  e6:	0e 94 92 01 	call	0x324	; 0x324 <main>
+  ea:	0c 94 c7 01 	jmp	0x38e	; 0x38e <_exit>
+
+000000ee <__bad_interrupt>:
+  ee:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000f2 <__vector_5>:
+ */ 
+
+#include "Buttons.h"
+
+//Interrupt sur PORTD (boutons)
+ISR(PCINT2_vect){
+  f2:	1f 92       	push	r1
+  f4:	0f 92       	push	r0
+  f6:	0f b6       	in	r0, 0x3f	; 63
+  f8:	0f 92       	push	r0
+  fa:	11 24       	eor	r1, r1
+  fc:	8f 93       	push	r24
+	// state watchdog is here to make sure the button presses only do the action once per press
+	
+	uint8_t currentState = PIND & 0xFC; // Read PD2 to PD7
+  fe:	89 b1       	in	r24, 0x09	; 9
+ 100:	8c 7f       	andi	r24, 0xFC	; 252
+	}
+	if (pressedPins & (1 << PD7)) {
+		buttonReduce(); // PD7 pressed
+	}
+
+	lastState = currentState; // Update last state
+ 102:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+}
+ 106:	8f 91       	pop	r24
+ 108:	0f 90       	pop	r0
+ 10a:	0f be       	out	0x3f, r0	; 63
+ 10c:	0f 90       	pop	r0
+ 10e:	1f 90       	pop	r1
+ 110:	18 95       	reti
+
+00000112 <_Z10buttonInitv>:
+
+void buttonInit(){
+	//Configure pins PD2..7 as input
+	DDRD &= ~((1 << PD2) | (1 << PD3) | (1 << PD4) | (1 << PD5) | (1 << PD6) | (1 << PD7));
+ 112:	8a b1       	in	r24, 0x0a	; 10
+ 114:	83 70       	andi	r24, 0x03	; 3
+ 116:	8a b9       	out	0x0a, r24	; 10
+	
+	//Enable pull-ups
+	PORTD |= (1 << PD2) | (1 << PD3) | (1 << PD4) | (1 << PD5) | (1 << PD6) | (1 << PD7);
+ 118:	8b b1       	in	r24, 0x0b	; 11
+ 11a:	8c 6f       	ori	r24, 0xFC	; 252
+ 11c:	8b b9       	out	0x0b, r24	; 11
+
+	//Enable pin change interrupts on PCINT[18:23] (PD2 to PD7) on group PCINT2
+	PCICR |= (1 << PCIE2);           
+ 11e:	e8 e6       	ldi	r30, 0x68	; 104
+ 120:	f0 e0       	ldi	r31, 0x00	; 0
+ 122:	80 81       	ld	r24, Z
+ 124:	84 60       	ori	r24, 0x04	; 4
+ 126:	80 83       	st	Z, r24
+	PCMSK2 |= 0xFC;                  // (0xFC = 11111100) for PCINT[18:23]
+ 128:	ed e6       	ldi	r30, 0x6D	; 109
+ 12a:	f0 e0       	ldi	r31, 0x00	; 0
+ 12c:	80 81       	ld	r24, Z
+ 12e:	8c 6f       	ori	r24, 0xFC	; 252
+ 130:	80 83       	st	Z, r24
+ 132:	08 95       	ret
+
+00000134 <_Z12displayResetv>:
+void displayData(float data){
+	
+}
+
+void displayReset(){
+	DP_position = 2;
+ 134:	82 e0       	ldi	r24, 0x02	; 2
+ 136:	80 93 01 01 	sts	0x0101, r24	; 0x800101 <DP_position>
+	
+	//Pose 0 a chaque afficheur (byte 1 a 5, et 0 est l'adresse)
+	for (int i = 1 ; i<=5 ; i++) transmitData[i] = LED_0;
+ 13a:	81 e0       	ldi	r24, 0x01	; 1
+ 13c:	90 e0       	ldi	r25, 0x00	; 0
+ 13e:	86 30       	cpi	r24, 0x06	; 6
+ 140:	91 05       	cpc	r25, r1
+ 142:	3c f4       	brge	.+14     	; 0x152 <_Z12displayResetv+0x1e>
+ 144:	fc 01       	movw	r30, r24
+ 146:	ee 5f       	subi	r30, 0xFE	; 254
+ 148:	fe 4f       	sbci	r31, 0xFE	; 254
+ 14a:	2f e3       	ldi	r18, 0x3F	; 63
+ 14c:	20 83       	st	Z, r18
+ 14e:	01 96       	adiw	r24, 0x01	; 1
+ 150:	f6 cf       	rjmp	.-20     	; 0x13e <_Z12displayResetv+0xa>
+	//Ajoute le point a la position voulue
+	transmitData[DP_position] |= DP_MASK;
+ 152:	e2 e0       	ldi	r30, 0x02	; 2
+ 154:	f1 e0       	ldi	r31, 0x01	; 1
+ 156:	82 81       	ldd	r24, Z+2	; 0x02
+ 158:	80 68       	ori	r24, 0x80	; 128
+ 15a:	82 83       	std	Z+2, r24	; 0x02
+	
+	USART0_SendBytes(transmitData, LENGTH_DATA);
+ 15c:	66 e0       	ldi	r22, 0x06	; 6
+ 15e:	cf 01       	movw	r24, r30
+ 160:	0e 94 b1 01 	call	0x362	; 0x362 <_Z16USART0_SendBytesPhh>
+ 164:	08 95       	ret
+
+00000166 <_Z11displayInitv>:
+uint8_t transmitData[LENGTH_DATA] = {CONTROL_ADDRESS,0,0,0,0,0}; // command + 5 data bytes
+uint8_t DP_position = 2;
+
+void displayInit(){
+	// Set the intensity of the display to the defined value
+	USART0_SendBytes(initData, LENGTH_INIT);
+ 166:	62 e0       	ldi	r22, 0x02	; 2
+ 168:	88 e0       	ldi	r24, 0x08	; 8
+ 16a:	91 e0       	ldi	r25, 0x01	; 1
+ 16c:	0e 94 b1 01 	call	0x362	; 0x362 <_Z16USART0_SendBytesPhh>
+	// set the display to 00.000
+	displayReset(); 
+ 170:	0e 94 9a 00 	call	0x134	; 0x134 <_Z12displayResetv>
+ 174:	08 95       	ret
+
+00000176 <_Z11encoderInitv>:
+int direction = 0;                // 1 -> forward, 2 -> backward
+int mode = 1; //1-> additive, 2->subtractive
+
+void encoderInit() {
+    // Configure pins as input
+    DDRB &= ~((1 << PB0) | (1 << PB1));
+ 176:	84 b1       	in	r24, 0x04	; 4
+ 178:	8c 7f       	andi	r24, 0xFC	; 252
+ 17a:	84 b9       	out	0x04, r24	; 4
+
+    // Enable pull-ups
+    PORTB |= (1 << PB0) | (1 << PB1);
+ 17c:	85 b1       	in	r24, 0x05	; 5
+ 17e:	83 60       	ori	r24, 0x03	; 3
+ 180:	85 b9       	out	0x05, r24	; 5
+
+    // Enable interrupt PCINT0..7
+    PCICR |= (1 << PCIE0); 
+ 182:	e8 e6       	ldi	r30, 0x68	; 104
+ 184:	f0 e0       	ldi	r31, 0x00	; 0
+ 186:	80 81       	ld	r24, Z
+ 188:	81 60       	ori	r24, 0x01	; 1
+ 18a:	80 83       	st	Z, r24
+    PCMSK0 |= (1 << PCINT0) | (1 << PCINT1); // Enable interrupts for PB0 and PB1
+ 18c:	eb e6       	ldi	r30, 0x6B	; 107
+ 18e:	f0 e0       	ldi	r31, 0x00	; 0
+ 190:	80 81       	ld	r24, Z
+ 192:	83 60       	ori	r24, 0x03	; 3
+ 194:	80 83       	st	Z, r24
+
+    // Setup initial state of encoder pins
+    lastState = PINB & ((1 << PB0) | (1 << PB1));
+ 196:	83 b1       	in	r24, 0x03	; 3
+ 198:	83 70       	andi	r24, 0x03	; 3
+ 19a:	90 e0       	ldi	r25, 0x00	; 0
+ 19c:	90 93 0f 01 	sts	0x010F, r25	; 0x80010f <lastState+0x1>
+ 1a0:	80 93 0e 01 	sts	0x010E, r24	; 0x80010e <lastState>
+ 1a4:	08 95       	ret
+
+000001a6 <__vector_3>:
+}
+
+//Interrupt sur PORTB (encodeur)
+ISR(PCINT0_vect) {
+ 1a6:	1f 92       	push	r1
+ 1a8:	0f 92       	push	r0
+ 1aa:	0f b6       	in	r0, 0x3f	; 63
+ 1ac:	0f 92       	push	r0
+ 1ae:	11 24       	eor	r1, r1
+ 1b0:	2f 93       	push	r18
+ 1b2:	3f 93       	push	r19
+ 1b4:	4f 93       	push	r20
+ 1b6:	5f 93       	push	r21
+ 1b8:	8f 93       	push	r24
+ 1ba:	9f 93       	push	r25
+    int currentState = PINB & ((1 << PB0) | (1 << PB1));
+ 1bc:	83 b1       	in	r24, 0x03	; 3
+ 1be:	83 70       	andi	r24, 0x03	; 3
+ 1c0:	90 e0       	ldi	r25, 0x00	; 0
+
+    // Decode quadrature encoder
+    if ((lastState == (1 << PB0) && currentState == (1 << PB1)) || 
+ 1c2:	20 91 0e 01 	lds	r18, 0x010E	; 0x80010e <lastState>
+ 1c6:	30 91 0f 01 	lds	r19, 0x010F	; 0x80010f <lastState+0x1>
+        (lastState == (1 << PB1) && currentState == 0) || 
+        (lastState == 0 && currentState == (1 << PB0)) || 
+ 1ca:	21 30       	cpi	r18, 0x01	; 1
+ 1cc:	31 05       	cpc	r19, r1
+ 1ce:	19 f4       	brne	.+6      	; 0x1d6 <__vector_3+0x30>
+//Interrupt sur PORTB (encodeur)
+ISR(PCINT0_vect) {
+    int currentState = PINB & ((1 << PB0) | (1 << PB1));
+
+    // Decode quadrature encoder
+    if ((lastState == (1 << PB0) && currentState == (1 << PB1)) || 
+ 1d0:	82 30       	cpi	r24, 0x02	; 2
+ 1d2:	91 05       	cpc	r25, r1
+ 1d4:	f1 f0       	breq	.+60     	; 0x212 <__vector_3+0x6c>
+        (lastState == (1 << PB1) && currentState == 0) || 
+ 1d6:	20 91 0e 01 	lds	r18, 0x010E	; 0x80010e <lastState>
+ 1da:	30 91 0f 01 	lds	r19, 0x010F	; 0x80010f <lastState+0x1>
+//Interrupt sur PORTB (encodeur)
+ISR(PCINT0_vect) {
+    int currentState = PINB & ((1 << PB0) | (1 << PB1));
+
+    // Decode quadrature encoder
+    if ((lastState == (1 << PB0) && currentState == (1 << PB1)) || 
+ 1de:	22 30       	cpi	r18, 0x02	; 2
+ 1e0:	31 05       	cpc	r19, r1
+ 1e2:	11 f4       	brne	.+4      	; 0x1e8 <__vector_3+0x42>
+        (lastState == (1 << PB1) && currentState == 0) || 
+ 1e4:	00 97       	sbiw	r24, 0x00	; 0
+ 1e6:	b9 f0       	breq	.+46     	; 0x216 <__vector_3+0x70>
+        (lastState == 0 && currentState == (1 << PB0)) || 
+ 1e8:	20 91 0e 01 	lds	r18, 0x010E	; 0x80010e <lastState>
+ 1ec:	30 91 0f 01 	lds	r19, 0x010F	; 0x80010f <lastState+0x1>
+ISR(PCINT0_vect) {
+    int currentState = PINB & ((1 << PB0) | (1 << PB1));
+
+    // Decode quadrature encoder
+    if ((lastState == (1 << PB0) && currentState == (1 << PB1)) || 
+        (lastState == (1 << PB1) && currentState == 0) || 
+ 1f0:	23 2b       	or	r18, r19
+ 1f2:	19 f4       	brne	.+6      	; 0x1fa <__vector_3+0x54>
+        (lastState == 0 && currentState == (1 << PB0)) || 
+ 1f4:	81 30       	cpi	r24, 0x01	; 1
+ 1f6:	91 05       	cpc	r25, r1
+ 1f8:	81 f0       	breq	.+32     	; 0x21a <__vector_3+0x74>
+        (lastState == ((1 << PB0) | (1 << PB1)) && currentState == (1 << PB1))) {
+ 1fa:	20 91 0e 01 	lds	r18, 0x010E	; 0x80010e <lastState>
+ 1fe:	30 91 0f 01 	lds	r19, 0x010F	; 0x80010f <lastState+0x1>
+    int currentState = PINB & ((1 << PB0) | (1 << PB1));
+
+    // Decode quadrature encoder
+    if ((lastState == (1 << PB0) && currentState == (1 << PB1)) || 
+        (lastState == (1 << PB1) && currentState == 0) || 
+        (lastState == 0 && currentState == (1 << PB0)) || 
+ 202:	23 30       	cpi	r18, 0x03	; 3
+ 204:	31 05       	cpc	r19, r1
+ 206:	59 f4       	brne	.+22     	; 0x21e <__vector_3+0x78>
+        (lastState == ((1 << PB0) | (1 << PB1)) && currentState == (1 << PB1))) {
+ 208:	82 30       	cpi	r24, 0x02	; 2
+ 20a:	91 05       	cpc	r25, r1
+ 20c:	51 f0       	breq	.+20     	; 0x222 <__vector_3+0x7c>
+    int currentState = PINB & ((1 << PB0) | (1 << PB1));
+
+    // Decode quadrature encoder
+    if ((lastState == (1 << PB0) && currentState == (1 << PB1)) || 
+        (lastState == (1 << PB1) && currentState == 0) || 
+        (lastState == 0 && currentState == (1 << PB0)) || 
+ 20e:	20 e0       	ldi	r18, 0x00	; 0
+ 210:	09 c0       	rjmp	.+18     	; 0x224 <__vector_3+0x7e>
+ 212:	21 e0       	ldi	r18, 0x01	; 1
+ 214:	07 c0       	rjmp	.+14     	; 0x224 <__vector_3+0x7e>
+ 216:	21 e0       	ldi	r18, 0x01	; 1
+ 218:	05 c0       	rjmp	.+10     	; 0x224 <__vector_3+0x7e>
+ 21a:	21 e0       	ldi	r18, 0x01	; 1
+ 21c:	03 c0       	rjmp	.+6      	; 0x224 <__vector_3+0x7e>
+ 21e:	20 e0       	ldi	r18, 0x00	; 0
+ 220:	01 c0       	rjmp	.+2      	; 0x224 <__vector_3+0x7e>
+ 222:	21 e0       	ldi	r18, 0x01	; 1
+//Interrupt sur PORTB (encodeur)
+ISR(PCINT0_vect) {
+    int currentState = PINB & ((1 << PB0) | (1 << PB1));
+
+    // Decode quadrature encoder
+    if ((lastState == (1 << PB0) && currentState == (1 << PB1)) || 
+ 224:	22 23       	and	r18, r18
+ 226:	89 f0       	breq	.+34     	; 0x24a <__vector_3+0xa4>
+        (lastState == (1 << PB1) && currentState == 0) || 
+        (lastState == 0 && currentState == (1 << PB0)) || 
+        (lastState == ((1 << PB0) | (1 << PB1)) && currentState == (1 << PB1))) {
+        encoderPosition++;
+ 228:	20 91 10 01 	lds	r18, 0x0110	; 0x800110 <encoderPosition>
+ 22c:	30 91 11 01 	lds	r19, 0x0111	; 0x800111 <encoderPosition+0x1>
+ 230:	2f 5f       	subi	r18, 0xFF	; 255
+ 232:	3f 4f       	sbci	r19, 0xFF	; 255
+ 234:	30 93 11 01 	sts	0x0111, r19	; 0x800111 <encoderPosition+0x1>
+ 238:	20 93 10 01 	sts	0x0110, r18	; 0x800110 <encoderPosition>
+        direction = 1; // Forward
+ 23c:	21 e0       	ldi	r18, 0x01	; 1
+ 23e:	30 e0       	ldi	r19, 0x00	; 0
+ 240:	30 93 0d 01 	sts	0x010D, r19	; 0x80010d <__data_end+0x1>
+ 244:	20 93 0c 01 	sts	0x010C, r18	; 0x80010c <__data_end>
+ 248:	52 c0       	rjmp	.+164    	; 0x2ee <__vector_3+0x148>
+    } else if ((lastState == (1 << PB1) && currentState == (1 << PB0)) || 
+ 24a:	40 91 0e 01 	lds	r20, 0x010E	; 0x80010e <lastState>
+ 24e:	50 91 0f 01 	lds	r21, 0x010F	; 0x80010f <lastState+0x1>
+               (lastState == (1 << PB0) && currentState == 0) || 
+               (lastState == 0 && currentState == (1 << PB1)) || 
+ 252:	42 30       	cpi	r20, 0x02	; 2
+ 254:	51 05       	cpc	r21, r1
+ 256:	19 f4       	brne	.+6      	; 0x25e <__vector_3+0xb8>
+        (lastState == (1 << PB1) && currentState == 0) || 
+        (lastState == 0 && currentState == (1 << PB0)) || 
+        (lastState == ((1 << PB0) | (1 << PB1)) && currentState == (1 << PB1))) {
+        encoderPosition++;
+        direction = 1; // Forward
+    } else if ((lastState == (1 << PB1) && currentState == (1 << PB0)) || 
+ 258:	81 30       	cpi	r24, 0x01	; 1
+ 25a:	91 05       	cpc	r25, r1
+ 25c:	e9 f0       	breq	.+58     	; 0x298 <__vector_3+0xf2>
+               (lastState == (1 << PB0) && currentState == 0) || 
+ 25e:	40 91 0e 01 	lds	r20, 0x010E	; 0x80010e <lastState>
+ 262:	50 91 0f 01 	lds	r21, 0x010F	; 0x80010f <lastState+0x1>
+        (lastState == (1 << PB1) && currentState == 0) || 
+        (lastState == 0 && currentState == (1 << PB0)) || 
+        (lastState == ((1 << PB0) | (1 << PB1)) && currentState == (1 << PB1))) {
+        encoderPosition++;
+        direction = 1; // Forward
+    } else if ((lastState == (1 << PB1) && currentState == (1 << PB0)) || 
+ 266:	41 30       	cpi	r20, 0x01	; 1
+ 268:	51 05       	cpc	r21, r1
+ 26a:	11 f4       	brne	.+4      	; 0x270 <__vector_3+0xca>
+               (lastState == (1 << PB0) && currentState == 0) || 
+ 26c:	00 97       	sbiw	r24, 0x00	; 0
+ 26e:	b1 f0       	breq	.+44     	; 0x29c <__vector_3+0xf6>
+               (lastState == 0 && currentState == (1 << PB1)) || 
+ 270:	40 91 0e 01 	lds	r20, 0x010E	; 0x80010e <lastState>
+ 274:	50 91 0f 01 	lds	r21, 0x010F	; 0x80010f <lastState+0x1>
+        (lastState == 0 && currentState == (1 << PB0)) || 
+        (lastState == ((1 << PB0) | (1 << PB1)) && currentState == (1 << PB1))) {
+        encoderPosition++;
+        direction = 1; // Forward
+    } else if ((lastState == (1 << PB1) && currentState == (1 << PB0)) || 
+               (lastState == (1 << PB0) && currentState == 0) || 
+ 278:	45 2b       	or	r20, r21
+ 27a:	19 f4       	brne	.+6      	; 0x282 <__vector_3+0xdc>
+               (lastState == 0 && currentState == (1 << PB1)) || 
+ 27c:	82 30       	cpi	r24, 0x02	; 2
+ 27e:	91 05       	cpc	r25, r1
+ 280:	79 f0       	breq	.+30     	; 0x2a0 <__vector_3+0xfa>
+               (lastState == ((1 << PB0) | (1 << PB1)) && currentState == (1 << PB0))) {
+ 282:	40 91 0e 01 	lds	r20, 0x010E	; 0x80010e <lastState>
+ 286:	50 91 0f 01 	lds	r21, 0x010F	; 0x80010f <lastState+0x1>
+        (lastState == ((1 << PB0) | (1 << PB1)) && currentState == (1 << PB1))) {
+        encoderPosition++;
+        direction = 1; // Forward
+    } else if ((lastState == (1 << PB1) && currentState == (1 << PB0)) || 
+               (lastState == (1 << PB0) && currentState == 0) || 
+               (lastState == 0 && currentState == (1 << PB1)) || 
+ 28a:	43 30       	cpi	r20, 0x03	; 3
+ 28c:	51 05       	cpc	r21, r1
+ 28e:	59 f4       	brne	.+22     	; 0x2a6 <__vector_3+0x100>
+               (lastState == ((1 << PB0) | (1 << PB1)) && currentState == (1 << PB0))) {
+ 290:	81 30       	cpi	r24, 0x01	; 1
+ 292:	91 05       	cpc	r25, r1
+ 294:	41 f4       	brne	.+16     	; 0x2a6 <__vector_3+0x100>
+ 296:	06 c0       	rjmp	.+12     	; 0x2a4 <__vector_3+0xfe>
+        (lastState == ((1 << PB0) | (1 << PB1)) && currentState == (1 << PB1))) {
+        encoderPosition++;
+        direction = 1; // Forward
+    } else if ((lastState == (1 << PB1) && currentState == (1 << PB0)) || 
+               (lastState == (1 << PB0) && currentState == 0) || 
+               (lastState == 0 && currentState == (1 << PB1)) || 
+ 298:	21 e0       	ldi	r18, 0x01	; 1
+ 29a:	05 c0       	rjmp	.+10     	; 0x2a6 <__vector_3+0x100>
+ 29c:	21 e0       	ldi	r18, 0x01	; 1
+ 29e:	03 c0       	rjmp	.+6      	; 0x2a6 <__vector_3+0x100>
+ 2a0:	21 e0       	ldi	r18, 0x01	; 1
+ 2a2:	01 c0       	rjmp	.+2      	; 0x2a6 <__vector_3+0x100>
+ 2a4:	21 e0       	ldi	r18, 0x01	; 1
+        (lastState == (1 << PB1) && currentState == 0) || 
+        (lastState == 0 && currentState == (1 << PB0)) || 
+        (lastState == ((1 << PB0) | (1 << PB1)) && currentState == (1 << PB1))) {
+        encoderPosition++;
+        direction = 1; // Forward
+    } else if ((lastState == (1 << PB1) && currentState == (1 << PB0)) || 
+ 2a6:	22 23       	and	r18, r18
+ 2a8:	11 f1       	breq	.+68     	; 0x2ee <__vector_3+0x148>
+               (lastState == (1 << PB0) && currentState == 0) || 
+               (lastState == 0 && currentState == (1 << PB1)) || 
+               (lastState == ((1 << PB0) | (1 << PB1)) && currentState == (1 << PB0))) {
+		if (mode == 2) encoderPosition--;
+ 2aa:	20 91 0a 01 	lds	r18, 0x010A	; 0x80010a <mode>
+ 2ae:	30 91 0b 01 	lds	r19, 0x010B	; 0x80010b <mode+0x1>
+ 2b2:	22 30       	cpi	r18, 0x02	; 2
+ 2b4:	31 05       	cpc	r19, r1
+ 2b6:	59 f4       	brne	.+22     	; 0x2ce <__vector_3+0x128>
+ 2b8:	20 91 10 01 	lds	r18, 0x0110	; 0x800110 <encoderPosition>
+ 2bc:	30 91 11 01 	lds	r19, 0x0111	; 0x800111 <encoderPosition+0x1>
+ 2c0:	21 50       	subi	r18, 0x01	; 1
+ 2c2:	31 09       	sbc	r19, r1
+ 2c4:	30 93 11 01 	sts	0x0111, r19	; 0x800111 <encoderPosition+0x1>
+ 2c8:	20 93 10 01 	sts	0x0110, r18	; 0x800110 <encoderPosition>
+ 2cc:	0a c0       	rjmp	.+20     	; 0x2e2 <__vector_3+0x13c>
+		else encoderPosition++;
+ 2ce:	20 91 10 01 	lds	r18, 0x0110	; 0x800110 <encoderPosition>
+ 2d2:	30 91 11 01 	lds	r19, 0x0111	; 0x800111 <encoderPosition+0x1>
+ 2d6:	2f 5f       	subi	r18, 0xFF	; 255
+ 2d8:	3f 4f       	sbci	r19, 0xFF	; 255
+ 2da:	30 93 11 01 	sts	0x0111, r19	; 0x800111 <encoderPosition+0x1>
+ 2de:	20 93 10 01 	sts	0x0110, r18	; 0x800110 <encoderPosition>
+        direction = 2; // Backward
+ 2e2:	22 e0       	ldi	r18, 0x02	; 2
+ 2e4:	30 e0       	ldi	r19, 0x00	; 0
+ 2e6:	30 93 0d 01 	sts	0x010D, r19	; 0x80010d <__data_end+0x1>
+ 2ea:	20 93 0c 01 	sts	0x010C, r18	; 0x80010c <__data_end>
+    }
+
+    lastState = currentState; // Update state
+ 2ee:	90 93 0f 01 	sts	0x010F, r25	; 0x80010f <lastState+0x1>
+ 2f2:	80 93 0e 01 	sts	0x010E, r24	; 0x80010e <lastState>
+}
+ 2f6:	9f 91       	pop	r25
+ 2f8:	8f 91       	pop	r24
+ 2fa:	5f 91       	pop	r21
+ 2fc:	4f 91       	pop	r20
+ 2fe:	3f 91       	pop	r19
+ 300:	2f 91       	pop	r18
+ 302:	0f 90       	pop	r0
+ 304:	0f be       	out	0x3f, r0	; 63
+ 306:	0f 90       	pop	r0
+ 308:	1f 90       	pop	r1
+ 30a:	18 95       	reti
+
+0000030c <_Z9mainSetupv>:
+}
+
+
+
+
+void mainLoop(){
+ 30c:	0e 94 96 01 	call	0x32c	; 0x32c <_Z8UARTInitv>
+ 310:	0e 94 b3 00 	call	0x166	; 0x166 <_Z11displayInitv>
+ 314:	0e 94 95 01 	call	0x32a	; 0x32a <_Z10sdCardInitv>
+ 318:	0e 94 89 00 	call	0x112	; 0x112 <_Z10buttonInitv>
+ 31c:	0e 94 bb 00 	call	0x176	; 0x176 <_Z11encoderInitv>
+ 320:	78 94       	sei
+ 322:	08 95       	ret
+
+00000324 <main>:
+}
+
+// Do not touch
+int main(void)
+{
+	mainSetup();
+ 324:	0e 94 86 01 	call	0x30c	; 0x30c <_Z9mainSetupv>
+ 328:	ff cf       	rjmp	.-2      	; 0x328 <main+0x4>
+
+0000032a <_Z10sdCardInitv>:
+ * SD_Card.cpp
+ * Author: Miriam C
+ */ 
+#include "SD_Card.h"
+
+void sdCardInit(){
+ 32a:	08 95       	ret
+
+0000032c <_Z8UARTInitv>:
+void UARTInit(void) {
+	// see table 24.9 of datasheet
+	// baud rate set to 19200 (required by TM1652)
+	// double speed mode abd F_CPU = 16MHz
+	
+	UBRR0H = 0;
+ 32c:	10 92 c5 00 	sts	0x00C5, r1	; 0x8000c5 <__TEXT_REGION_LENGTH__+0x7f80c5>
+	UBRR0L = 0x67; // 103
+ 330:	87 e6       	ldi	r24, 0x67	; 103
+ 332:	80 93 c4 00 	sts	0x00C4, r24	; 0x8000c4 <__TEXT_REGION_LENGTH__+0x7f80c4>
+	UCSR0A |= (1 << U2X0);						//Enable double speed mode ; UCSR0A &= ~(1 << U2X0) to disable
+ 336:	e0 ec       	ldi	r30, 0xC0	; 192
+ 338:	f0 e0       	ldi	r31, 0x00	; 0
+ 33a:	80 81       	ld	r24, Z
+ 33c:	82 60       	ori	r24, 0x02	; 2
+ 33e:	80 83       	st	Z, r24
+	UCSR0B |= (1 << TXEN0) | (1 << RXEN0);		//Enable USART transmitter/receiver 
+ 340:	e1 ec       	ldi	r30, 0xC1	; 193
+ 342:	f0 e0       	ldi	r31, 0x00	; 0
+ 344:	80 81       	ld	r24, Z
+ 346:	88 61       	ori	r24, 0x18	; 24
+ 348:	80 83       	st	Z, r24
+	
+	// Bit structure :
+	// start bit handled automatically
+	UCSR0C |= (1 << UCSZ01) | (1 << UCSZ00);	//8 data bits
+ 34a:	e2 ec       	ldi	r30, 0xC2	; 194
+ 34c:	f0 e0       	ldi	r31, 0x00	; 0
+ 34e:	80 81       	ld	r24, Z
+ 350:	86 60       	ori	r24, 0x06	; 6
+ 352:	80 83       	st	Z, r24
+	UCSR0C |= (1 << UCSZ01) | (1 << UCSZ00) | (1 << UPM01);  // Even parity
+ 354:	80 81       	ld	r24, Z
+ 356:	86 62       	ori	r24, 0x26	; 38
+ 358:	80 83       	st	Z, r24
+	UCSR0C &= ~(1 << USBS0);  // 1 stop bit (clear USBS0)
+ 35a:	80 81       	ld	r24, Z
+ 35c:	87 7f       	andi	r24, 0xF7	; 247
+ 35e:	80 83       	st	Z, r24
+ 360:	08 95       	ret
+
+00000362 <_Z16USART0_SendBytesPhh>:
+	
+}
+
+void USART0_SendBytes(uint8_t *data, uint8_t length) {
+ 362:	dc 01       	movw	r26, r24
+	for (uint16_t i = 0; i < length; i++) {
+ 364:	20 e0       	ldi	r18, 0x00	; 0
+ 366:	30 e0       	ldi	r19, 0x00	; 0
+ 368:	46 2f       	mov	r20, r22
+ 36a:	50 e0       	ldi	r21, 0x00	; 0
+ 36c:	24 17       	cp	r18, r20
+ 36e:	35 07       	cpc	r19, r21
+ 370:	68 f4       	brcc	.+26     	; 0x38c <_Z16USART0_SendBytesPhh+0x2a>
+		// Attendre que le buffer de transmission soit vide 
+		while (!(UCSR0A & (1 << UDRE0)));
+ 372:	90 91 c0 00 	lds	r25, 0x00C0	; 0x8000c0 <__TEXT_REGION_LENGTH__+0x7f80c0>
+ 376:	95 ff       	sbrs	r25, 5
+ 378:	fc cf       	rjmp	.-8      	; 0x372 <_Z16USART0_SendBytesPhh+0x10>
+		
+		// Envoyer le byte
+		UDR0 = data[i];
+ 37a:	fd 01       	movw	r30, r26
+ 37c:	e2 0f       	add	r30, r18
+ 37e:	f3 1f       	adc	r31, r19
+ 380:	90 81       	ld	r25, Z
+ 382:	90 93 c6 00 	sts	0x00C6, r25	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7f80c6>
+	UCSR0C &= ~(1 << USBS0);  // 1 stop bit (clear USBS0)
+	
+}
+
+void USART0_SendBytes(uint8_t *data, uint8_t length) {
+	for (uint16_t i = 0; i < length; i++) {
+ 386:	2f 5f       	subi	r18, 0xFF	; 255
+ 388:	3f 4f       	sbci	r19, 0xFF	; 255
+ 38a:	ee cf       	rjmp	.-36     	; 0x368 <_Z16USART0_SendBytesPhh+0x6>
+ 38c:	08 95       	ret
+
+0000038e <_exit>:
+ 38e:	f8 94       	cli
+
+00000390 <__stop_program>:
+ 390:	ff cf       	rjmp	.-2      	; 0x390 <__stop_program>

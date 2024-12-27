@@ -28,6 +28,7 @@ void encoderInit() {
     lastState = PINB & ((1 << PB0) | (1 << PB1));
 }
 
+//Interrupt sur PORTB (encodeur)
 ISR(PCINT0_vect) {
     int currentState = PINB & ((1 << PB0) | (1 << PB1));
 
