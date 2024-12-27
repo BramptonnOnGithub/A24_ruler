@@ -3,3 +3,7 @@
  * Author: Miriam C
  */ 
 #include "SD_Card.h"
+
+void sdCardInit(){
+	
+}

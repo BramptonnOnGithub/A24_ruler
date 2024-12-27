@@ -3,4 +3,4 @@
  * Author: Miriam C
  */ 
 
-bool sdCardInit();
+void sdCardInit();

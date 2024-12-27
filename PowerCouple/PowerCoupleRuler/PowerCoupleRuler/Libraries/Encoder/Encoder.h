@@ -5,4 +5,4 @@
 
 #include "include_generic.h"
 
-bool encoderInit();
+void encoderInit();
