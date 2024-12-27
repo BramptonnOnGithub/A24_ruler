@@ -7,6 +7,7 @@
 
 #define CONTROL_MODE		0x18 //display control command
 #define LED_DUTY_CYCLE		0xF8 //about 50%
+#define LED_DUTY_CYCLE		0xF8 //about 50%
 
 #define CONTROL_ADDRESS		0x08 //display address command
 

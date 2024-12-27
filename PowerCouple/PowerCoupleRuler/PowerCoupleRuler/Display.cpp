@@ -18,16 +18,22 @@ void displayInit(){
 	displayReset(); 
 }
 
+uint8_t LEDnumber[10] = {LED_0, LED_1, LED_2, LED_3, LED_4, LED_5, LED_6, LED_7, LED_8, LED_9};
+
 void displayData(float data){
 	//Pose 0 a chaque afficheur
-	for (int j = 0 ; j<9 ; j++){
-		for (int i = 1 ; i<=5 ; i++)
-		{
-			transmitData[i] = LEDnumber[j];
-			USART0_SendBytes(transmitData, LENGTH_DATA);
-		}
-		_delay_ms(1000);
-	}	
+	for (int j = 0 ; j<10 ; j++){
+	for (int i = 1 ; i<=5 ; i++)
+	{
+		transmitData[i] = LEDnumber[j];
+		
+	}
+	USART0_SendBytes(transmitData, LENGTH_DATA);
+	_delay_ms(1000);
+}
+
+//Transmission des donnees
+
 }
 
 void displayReset(){
@@ -35,10 +41,7 @@ void displayReset(){
 	DP_position = 2;
 	
 	//Pose 0 a chaque afficheur 
-	for (int i = 1 ; i<=5 ; i++) 
-	{
-		transmitData[i] = LED_0;
-	}
+	for (int i = 1 ; i<=5 ; i++) transmitData[i] = LED_8;
 	//Ajoute le point a la position voulue
 	transmitData[DP_position] |= DP_MASK;
 	
@@ -55,5 +58,7 @@ void displayDecrement(){
 	if(DP_position < 2) return;
 	DP_position--;
 }
+
+
 
 	
