@@ -7,8 +7,7 @@
 #define F_CPU 1000000UL
 
 // Libraries de base
-#include <avr/io.h>
-#include <util/delay.h>
+#include "include_generic.h"
 
 // Libraries de l'equipe
 #include "Buttons.h"
@@ -16,7 +15,7 @@
 #include "Encoder.h"
 #include "SD_Card.h"
 
-// Définition des bytes
+// Definition des bytes
 typedef uint8_t byte;
 
 
