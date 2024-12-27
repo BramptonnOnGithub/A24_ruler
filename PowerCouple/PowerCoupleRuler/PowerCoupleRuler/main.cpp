@@ -20,9 +20,9 @@ void mainSetup(){
 	
 	// Initialisation des libraries
 	displayInit();
-	sdCardInit();
-	buttonInit();
-	encoderInit();
+	//sdCardInit();
+	//buttonInit();
+	//encoderInit();
 	
 	// Activation des interrupt global (for button and encoder)
 	sei();
@@ -32,8 +32,12 @@ void mainSetup(){
 
 
 void mainLoop(){
-	transmitByte(0x69);
-	_delay_ms(100);
+	//transmitByte(0x69);
+	//_delay_ms(100);
+	
+	displayData(0);
+	//displayReset();
+	_delay_ms(10);
 }
 
 // Do not touch
