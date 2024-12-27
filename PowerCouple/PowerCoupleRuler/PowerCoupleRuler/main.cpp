@@ -32,7 +32,8 @@ void mainSetup(){
 
 
 void mainLoop(){
-	
+	transmitByte(0x69);
+	_delay_ms(100);
 }
 
 // Do not touch

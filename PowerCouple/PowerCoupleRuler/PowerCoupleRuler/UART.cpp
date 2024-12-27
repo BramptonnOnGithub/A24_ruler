@@ -19,8 +19,13 @@ void UARTInit(void) {
 	// start bit handled automatically
 	UCSR0C |= (1 << UCSZ01) | (1 << UCSZ00);	//8 data bits
 	UCSR0C |= (1 << UCSZ01) | (1 << UCSZ00) | (1 << UPM01);  // Even parity
-	UCSR0C &= ~(1 << USBS0);  // 1 stop bit (clear USBS0)
+	//UCSR0C &= ~(1 << USBS0);  // 1 stop bit (clear USBS0)
 	
+}
+
+void transmitByte(uint8_t data) {
+	loop_until_bit_is_set(UCSR0A, UDRE0); /* Attendre que le buffer de transmission soit vide */
+	UDR0 = data;                      /* envoyer la donnée */
 }
 
 void USART0_SendBytes(uint8_t *data, uint8_t length) {

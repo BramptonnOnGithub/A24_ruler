@@ -183,11 +183,11 @@ void buttonInit(){
  132:	08 95       	ret
 
 00000134 <_Z12displayResetv>:
-void displayData(float data){
 	
 }
 
 void displayReset(){
+	//Reset la position du point
 	DP_position = 2;
  134:	82 e0       	ldi	r24, 0x02	; 2
  136:	80 93 01 01 	sts	0x0101, r24	; 0x800101 <DP_position>
@@ -214,6 +214,7 @@ void displayReset(){
  158:	80 68       	ori	r24, 0x80	; 128
  15a:	82 83       	std	Z+2, r24	; 0x02
 	
+	//Transmission des donnees
 	USART0_SendBytes(transmitData, LENGTH_DATA);
  15c:	66 e0       	ldi	r22, 0x06	; 6
  15e:	cf 01       	movw	r24, r30
