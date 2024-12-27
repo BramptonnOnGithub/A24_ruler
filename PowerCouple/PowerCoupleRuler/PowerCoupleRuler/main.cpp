@@ -3,7 +3,7 @@
  * Author : Ramtin B. M.
  */ 
 
-// CLK speed de 1MHz
+// CLK speed de 16MHz (external)
 #define F_CPU 16000000UL
 
 // Libraries de base

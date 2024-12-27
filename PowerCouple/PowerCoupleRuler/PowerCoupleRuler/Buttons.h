@@ -5,7 +5,6 @@
 
 #include "include_generic.h"
 
-//initializes the interrupts on the button pins
 void buttonInit();
 
 //Button actions

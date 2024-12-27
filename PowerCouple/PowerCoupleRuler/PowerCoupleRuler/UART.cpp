@@ -3,6 +3,8 @@
  * Author: Miriam C
  */ 
 
+#include "UART.h"
+
 void UARTInit(void) {
 	// see table 24.9 of datasheet
 	// baud rate set to 19200 (required by TM1652)
@@ -21,7 +23,7 @@ void UARTInit(void) {
 	
 }
 
-void USART0_SendBytes(uint8_t *data, uint16_t length) {
+void USART0_SendBytes(uint8_t *data, uint8_t length) {
 	for (uint16_t i = 0; i < length; i++) {
 		// Attendre que le buffer de transmission soit vide 
 		while (!(UCSR0A & (1 << UDRE0)));

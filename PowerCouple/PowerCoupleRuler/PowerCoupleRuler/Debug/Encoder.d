@@ -1,4 +1,4 @@
-Buttons.d Buttons.o: .././Buttons.cpp .././Buttons.h \
+Encoder.d Encoder.o: .././Encoder.cpp .././Encoder.h \
  .././include_generic.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
@@ -16,7 +16,7 @@ Buttons.d Buttons.o: .././Buttons.cpp .././Buttons.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h
 
-.././Buttons.h:
+.././Encoder.h:
 
 .././include_generic.h:
 
