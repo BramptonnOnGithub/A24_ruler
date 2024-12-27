@@ -9,6 +9,8 @@ uint8_t group_mask[5] = {GR1_MASK, GR2_MASK, GR3_MASK, GR4_MASK, GR5_MASK};
 uint8_t transmitData[LENGTH_DATA] = {CONTROL_ADDRESS,0}; // address of the group + data
 uint8_t DP_position = 2;
 
+uint8_t LEDnumber[10] = {LED_0, LED_1, LED_2, LED_3, LED_4, LED_5, LED_6, LED_7, LED_8, LED_9};
+
 void displayInit(){
 	// Set the intensity of the display to the defined value
 	USART0_SendBytes(initData, LENGTH_INIT);
@@ -17,7 +19,15 @@ void displayInit(){
 }
 
 void displayData(float data){
-	
+	//Pose 0 a chaque afficheur
+	for (int j = 0 ; j<9 ; j++){
+		for (int i = 1 ; i<=5 ; i++)
+		{
+			transmitData[i] = LEDnumber[j];
+			USART0_SendBytes(transmitData, LENGTH_DATA);
+		}
+		_delay_ms(1000);
+	}	
 }
 
 void displayReset(){
@@ -25,7 +35,10 @@ void displayReset(){
 	DP_position = 2;
 	
 	//Pose 0 a chaque afficheur 
-	for (int i = 1 ; i<=5 ; i++) transmitData[i] = LED_0;
+	for (int i = 1 ; i<=5 ; i++) 
+	{
+		transmitData[i] = LED_0;
+	}
 	//Ajoute le point a la position voulue
 	transmitData[DP_position] |= DP_MASK;
 	
