@@ -1,7 +1,7 @@
 /*
  * PowerCoupleRuler.cpp
  * Author : Ramtin B. M.
- */ 
+ */
 
 // Libraries de base
 #include "include_generic.h"
@@ -13,45 +13,38 @@
 #include "Encoder.h"
 #include "SD_Card.h"
 
-void mainSetup(){
-	// initialisation de la communication
-	UARTInit(); // baud rate initialisee a 19200 
-	/*TODO : SPI*/
-	
-	// Initialisation des libraries
-	displayInit();
-	//sdCardInit();
-	buttonInit();
-	encoderInit();
-	// Activation des interrupt global (for button and encoder)
-	//sei();
+void mainSetup() {
+    // Initialize UART communication
+    UARTInit(); // Baud rate initialized at 19200
+    /* TODO: SPI initialization */
+    
+    // Initialize libraries
+    displayInit();
+    // sdCardInit();
+    buttonInit();
+    encoderInit();
+    
+    // Enable global interrupts (for button and encoder)
+    sei();
 }
 
+void mainLoop() {
+    // Print the encoder position
+    static int lastPosition = 0;
+    int currentPosition = encoderGetTicks();
+    if (lastPosition != currentPosition) {
+        transmitByte(currentPosition);
+        lastPosition = currentPosition;
+    }
 
-
-
-void mainLoop(){
-	//transmitByte(0x69);
-	//_delay_ms(100);
-	//displayReset();
-	//displayData(1);
-	//testdata(1,2);
-	//displayReset();
-	//_delay_ms(10);
-	//cli(); // Disable interrupts
-	int distance = (int)encoderGetDistance();
-	//sei(); // Re-enable interrupts
-	transmitByte(PB1);
-	_delay_ms(100);
+    // Add a delay to prevent spamming
+    _delay_ms(100);
 }
 
 // Do not touch
-int main(void)
-{
-	mainSetup();
-    while (1) 
-    {
-		mainLoop();
+int main(void) {
+    mainSetup();
+    while (1) {
+        mainLoop();
     }
-}
-
+} 

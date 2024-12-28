@@ -18,7 +18,7 @@ void displayInit(){
 	displayReset(); 
 }
 
-uint8_t LEDnumber[10] = {LED_0, LED_1, LED_2, LED_3, LED_4, LED_5, LED_6, LED_7, LED_8, LED_9};
+
 
 void displayData(float data){
 	//Pose 0 a chaque afficheur

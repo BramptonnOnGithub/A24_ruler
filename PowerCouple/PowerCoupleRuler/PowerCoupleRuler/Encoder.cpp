@@ -5,57 +5,61 @@
 #include "Encoder.h"
 #include "UART.h"
 
+// Define pins
+#define encoderPinA PB2  // Interrupt pin for Channel A
+#define encoderPinB PC1  // Channel B (no interrupt)
+#define highPin PE3      // Pin for High
+#define lowPin PC0       // Pin for Low
 
-volatile int encoderPosition = 1; // Tracks encoder position
-volatile int lastState = 0;       // Previous state of encoder pins
+// Variables to track position
+volatile int encoderPosition = 0; // Position counter
+volatile int lastEncoded = 0;     // Last encoder state
 float circumference = (2 * PI * RADIUS) / RESOLUTION;
 int direction = 0;                // 1 -> forward, 2 -> backward
-int mode = 1; //1-> additive, 2->subtractive
 
 void encoderInit() {
-	DDRC |= (1 << PC0);
+    // Configure high and low pins as output
+    DDRE |= (1 << highPin);
+    DDRC |= (1 << lowPin);
 
-	PORTC &= ~(1 << PC0);
-	
-	DDRC |= (1 << PC1);
+    // Set high pin high and low pin low
+    PORTE |= (1 << highPin);
+    PORTC &= ~(1 << lowPin);
 
-	PORTC |= (1 << PC1);
-	
-    // Configure pins as input
-    DDRB &= ~((1 << PB0) | (1 << PB1));
+    // Configure encoder pins as input
+    DDRB &= ~(1 << encoderPinA);
+    DDRC &= ~(1 << encoderPinB);
 
-    // Enable pull-ups
-    PORTB |= (1 << PB0) | (1 << PB1);
+    // Enable pull-ups for encoder pins
+    PORTB |= (1 << encoderPinA);
+    PORTC |= (1 << encoderPinB);
 
-    // Enable interrupt PCINT0..7
+    // Enable interrupt for encoderPinA only
     PCICR |= (1 << PCIE0); 
-    PCMSK0 |= (1 << PCINT0) | (1 << PCINT1); // Enable interrupts for PB0 and PB1
+    PCMSK0 |= (1 << PCINT2); // Enable interrupt for PB2 (encoderPinA)
 
     // Setup initial state of encoder pins
-    lastState = PINB & ((1 << PB0) | (1 << PB1));
+    lastEncoded = ((PINB & (1 << encoderPinA)) >> encoderPinA) << 1 | ((PINC & (1 << encoderPinB)) >> encoderPinB);
 }
 
-//Interrupt sur PORTB (encodeur)
-ISR(PCINT0_vect) {
-    int currentState = PINB & ((1 << PB0) | (1 << PB1));
-  transmitByte(0x01);
-    // Decode quadrature encoder
-    if ((lastState == (1 << PB0) && currentState == (1 << PB1)) || 
-        (lastState == (1 << PB1) && currentState == 0) || 
-        (lastState == 0 && currentState == (1 << PB0)) || 
-        (lastState == ((1 << PB0) | (1 << PB1)) && currentState == (1 << PB1))) {
-        encoderPosition++;
-        direction = 1; // Forward
-    } else if ((lastState == (1 << PB1) && currentState == (1 << PB0)) || 
-               (lastState == (1 << PB0) && currentState == 0) || 
-               (lastState == 0 && currentState == (1 << PB1)) || 
-               (lastState == ((1 << PB0) | (1 << PB1)) && currentState == (1 << PB0))) {
-		if (mode == 2) encoderPosition--;
-		else encoderPosition++;
-        direction = 2; // Backward
-    }
+// Interrupt for encoderPinA
+ISR(PCINT1_vect) {
+    updateEncoder();
+    transmitByte(0xAA); // Debug message to confirm interrupt execution
+}
 
-    lastState = currentState; // Update state
+void updateEncoder() {
+    int MSB = (PINB & (1 << encoderPinA)) >> encoderPinA; // Most Significant Bit (Channel A)
+    int LSB = (PINC & (1 << encoderPinB)) >> encoderPinB; // Least Significant Bit (Channel B)
+
+    int encoded = (MSB << 1) | LSB; // Combine MSB and LSB
+    int sum = (lastEncoded << 2) | encoded; // Combine last and current states
+
+    // Update position based on state change
+    if (sum == 0b1101 || sum == 0b0100 || sum == 0b0010 || sum == 0b1011) encoderPosition++;
+    if (sum == 0b1110 || sum == 0b0111 || sum == 0b0001 || sum == 0b1000) encoderPosition--;
+
+    lastEncoded = encoded; // Store current state
 }
 
 float encoderGetDistance() {
@@ -71,5 +75,5 @@ int encoderGetTicks() {
 }
 
 int encoderGetDirection() {
-    return direction; // 1 -> forward, 2 -> backward
+    return (encoderPosition >= 0) ? 1 : 2; // 1 -> forward, 2 -> backward
 }

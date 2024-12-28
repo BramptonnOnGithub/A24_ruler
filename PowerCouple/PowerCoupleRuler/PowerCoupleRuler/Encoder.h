@@ -14,3 +14,4 @@ float encoderGetDistance();
 void encoderReset();
 int encoderGetTicks();
 int encoderGetDirection();
+void updateEncoder();

@@ -9,7 +9,7 @@
 //Interrupt sur PORTD (boutons)
 ISR(PCINT2_vect){
 	// state watchdog is here to make sure the button presses only do the action once per press
-	transmitByte(0xFF);
+	transmitByte(0xF2);
 	uint8_t currentState = PIND & 0xFC; // Read PD2 to PD7
 	static uint8_t lastState = 0xFC;   // Store previous state
 	uint8_t changedPins = currentState ^ lastState; // Detect changes
