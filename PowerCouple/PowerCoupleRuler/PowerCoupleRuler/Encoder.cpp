@@ -3,17 +3,24 @@
  * Author: faryc
  */ 
 #include "Encoder.h"
-#define RADIUS 13.5
-#define PI 3.141592653589793
-#define RESOLUTION 24
+#include "UART.h"
 
-volatile int encoderPosition = 0; // Tracks encoder position
+
+volatile int encoderPosition = 1; // Tracks encoder position
 volatile int lastState = 0;       // Previous state of encoder pins
 float circumference = (2 * PI * RADIUS) / RESOLUTION;
 int direction = 0;                // 1 -> forward, 2 -> backward
 int mode = 1; //1-> additive, 2->subtractive
 
 void encoderInit() {
+	DDRC |= (1 << PC0);
+
+	PORTC &= ~(1 << PC0);
+	
+	DDRC |= (1 << PC1);
+
+	PORTC |= (1 << PC1);
+	
     // Configure pins as input
     DDRB &= ~((1 << PB0) | (1 << PB1));
 
@@ -31,7 +38,7 @@ void encoderInit() {
 //Interrupt sur PORTB (encodeur)
 ISR(PCINT0_vect) {
     int currentState = PINB & ((1 << PB0) | (1 << PB1));
-
+  transmitByte(0x01);
     // Decode quadrature encoder
     if ((lastState == (1 << PB0) && currentState == (1 << PB1)) || 
         (lastState == (1 << PB1) && currentState == 0) || 

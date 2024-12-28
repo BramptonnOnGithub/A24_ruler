@@ -21,11 +21,10 @@ void mainSetup(){
 	// Initialisation des libraries
 	displayInit();
 	//sdCardInit();
-	//buttonInit();
-	//encoderInit();
-	
+	buttonInit();
+	encoderInit();
 	// Activation des interrupt global (for button and encoder)
-	sei();
+	//sei();
 }
 
 
@@ -34,10 +33,16 @@ void mainSetup(){
 void mainLoop(){
 	//transmitByte(0x69);
 	//_delay_ms(100);
-	
-	displayData(0);
 	//displayReset();
-	_delay_ms(10);
+	//displayData(1);
+	//testdata(1,2);
+	//displayReset();
+	//_delay_ms(10);
+	//cli(); // Disable interrupts
+	int distance = (int)encoderGetDistance();
+	//sei(); // Re-enable interrupts
+	transmitByte(PB1);
+	_delay_ms(100);
 }
 
 // Do not touch

@@ -11,11 +11,11 @@
 #define CONTROL_ADDRESS		0x08 //display address command
 
 //Define 7 segment group masks
-#define GR1_MASK 0x00
-#define GR2_MASK 0x80
-#define GR3_MASK 0x40
-#define GR4_MASK 0xC0
-#define GR5_MASK 0x20
+#define GR1_MASK 0x00    //0x00
+#define GR2_MASK 0x80    //0x80
+#define GR3_MASK 0x40    //0x40
+#define GR4_MASK 0xC0    //0xC0
+#define GR5_MASK 0x20	 //0x20
 
 // Define data sent for each number to display
 #define LED_0    0xC0    //0x3F
@@ -28,7 +28,7 @@
 #define LED_7    0xF8    //0x07
 #define LED_8    0x80    //0x7F
 #define LED_9    0x90    //0x6F
-#define DP_MASK 0x7F    //0x80
+#define DP_MASK  0x7F    //0x80
 
 
 
@@ -46,4 +46,6 @@ void displayReset();
 void displayIncrement();
 
 void displayDecrement();
+
+void testdata(int position, int data);
 
